@@ -1,0 +1,5 @@
+frontend/node_modules
+dist/static/
+dist/index.html
+server/__pycache__
+server_no_cors/__pycache__

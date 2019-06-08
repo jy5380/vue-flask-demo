@@ -1,0 +1,48 @@
+mkdir TestProj
+cd TestProj
+
+
+mkdir server
+mkdir dist
+
+run "vue init webpack frontend"
+选默认值
+
+/frontend
+/dist
+/server
+
+1. 开发流程
+
+    后台
+    cd server
+    set FLASK_APP = run.py
+    flask run
+
+    前端
+    cd ../frontend
+    npm install (仅需第一次)
+    npm run dev
+
+2. 发布流程
+    后台同上
+
+    前端
+    修改 frontend/config/index.js中的
+    “
+    index: path.resolve(__dirname, './dist/index.html'),
+
+    // Paths
+    assetsRoot: path.resolve(__dirname, './dist'),
+    ”
+
+    改为：
+    “
+    index: path.resolve(__dirname, '../../dist/index.html'),
+
+    // Paths
+    assetsRoot: path.resolve(__dirname, '../../dist'),
+    ”
+    
+    npm run build
+
